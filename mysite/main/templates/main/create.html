@@ -1,0 +1,19 @@
+{% extends "main/base.html"%}
+
+{% block title %}Create New List{% endblock %}
+
+{% block content %}
+<h1>Create Page</h1>
+<form method="post" action="/create/" class="form-group">
+    {% csrf_token %}
+    <div class = "input-group mb-3">
+    <!-- we show only the name, not the checkbox -->
+        <div class = "input-group-prepend">
+        <!-- it makes the button a bit different* -->
+            <button type="submit", name="save" class = "btn btn-success">Create New</button>
+            <!-- the btn btn-succes colors the button and adds a font -->
+        </div>
+        {{form.name}}
+    </div>
+</form>
+{% endblock %}
